@@ -1,7 +1,10 @@
+import { useState } from "react";
 import electricalBg from "../assets/electrical_bg.jpg";
 import plumbingBg from "../assets/plumbing_bg.jpg";
 
 function Services() {
+  const [activeCard, setActiveCard] = useState(null);
+
   return (
         <section className="services">
     <h2 className="section-title">Our Services</h2>
@@ -10,8 +13,9 @@ function Services() {
     <div className="services-grid"> 
 
         <div
-        className="service-card"
+        className={`service-card ${activeCard === 0 ? 'active' : ''}`}
         style={{ backgroundImage: `url(${electricalBg})` }}
+        onClick={() => setActiveCard(activeCard === 0 ? null : 0)}
         >
         <div className="card-overlay">
             <div className="badge">24/7 Emergency</div>
@@ -25,8 +29,9 @@ function Services() {
         </div>
 
         <div
-        className="service-card"
+        className={`service-card ${activeCard === 1 ? 'active' : ''}`}
         style={{ backgroundImage: `url(${plumbingBg})` }}
+        onClick={() => setActiveCard(activeCard === 1 ? null : 1)}
         >
         <div className="card-overlay">
             <div className="badge">24/7 Emergency</div>

@@ -21,7 +21,6 @@ function AMCPlans() {
 
     {/* Premium Plan */}
     <div className="plan-card premium">
-      <div className="plan-badge">Recommended</div>
       <h3>Premium Plan</h3>
       <ul>
         <li>✔ Major + Minor Issues</li>
