@@ -6,8 +6,10 @@ import EmergencySupport from "./components/Emergencysupport";
 import Services from "./components/Services";
 import AMCPlans from "./components/AMCPlans";
 import HowItWorks from "./components/HowItworks";
-import Footer from "./components/Footer";
 import Store from "./components/Store";
+import WhyChooseUs from "./components/Whychooseus";
+import FinalCTA from "./components/FinalCTA";
+//import Footer from "./components/Footer";
 
 function App() {
   const [theme, setTheme] = useState("light");
@@ -31,7 +33,8 @@ function App() {
       <AMCPlans />
       <HowItWorks theme={theme} />
       <Store/>
-      <Footer />
+      <WhyChooseUs theme={theme}/>
+      <FinalCTA />
     </>
   );
 }

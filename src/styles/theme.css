@@ -819,25 +819,19 @@ body {
 
 /* ── Product image ── */
 .ps-product-img-wrap {
-  width: 64px;
-  height: 64px;
-  border-radius: 0.65rem;
-  background: color-mix(in srgb, var(--primary-color) 8%, var(--card-bg));
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 0.75rem;
   overflow: hidden;
-  transition: background 0.2s;
-}
-
-.ps-product-card:hover .ps-product-img-wrap {
-  background: color-mix(in srgb, var(--primary-color) 15%, var(--card-bg));
+  background: none;
 }
 
 .ps-product-img-wrap img {
-  width: 44px;
-  height: 44px;
-  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  display: block;
 }
 
 /* ── Product name ── */
@@ -883,6 +877,163 @@ body {
 .ps-cta-btn:active {
   transform: scale(0.97);
 }
+/* ================= WHY CHOOSE US SECTION ================= */
+/* SECTION */
+.wcu-section {
+  width: 100%;
+  padding: 4rem 1.25rem;
+  background: var(--bg-color);
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ── TITLE */
+.wcu-title-wrap {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.wcu-section-title {
+  font-family: 'Sora', sans-serif;
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text-color);
+  margin-bottom: 0.4rem;
+}
+
+.wcu-title-underline {
+  display: block;
+  height: 3px;
+  width: 60px;
+  background: var(--primary-color);
+  border-radius: 2px;
+  margin: 0.4rem auto 0.9rem;
+}
+
+.wcu-section-subtitle {
+  font-size: 0.97rem;
+  color: var(--text-color);
+  opacity: 0.6;
+  max-width: 44ch;
+  margin-inline: auto;
+  line-height: 1.6;
+}
+
+/*
+   GRID
+   mobile:  2 x 2
+   desktop: 1 x 4 */
+.wcu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);   /* mobile: 2 columns */
+  gap: 1.25rem;
+  max-width: 1000px;
+  margin-inline: auto;
+}
+/*========Finally, the CTA section========*/
+/* ══════════════════════════════════════
+   SECTION
+══════════════════════════════════════ */
+.cta-section {
+  width: 100%;
+  padding: 5.5rem 1.5rem;
+  background: var(--card-bg);
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text-color);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* subtle top & bottom border lines */
+.cta-section::before,
+.cta-section::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1.5px;
+  background: color-mix(in srgb, var(--primary-color) 15%, transparent);
+}
+.cta-section::before { top: 0;    }
+.cta-section::after  { bottom: 0; }
+
+/* ── Decorative blobs ── */
+.cta-blob {
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  opacity: 0.35;
+  background: color-mix(in srgb, var(--primary-color) 30%, transparent);
+}
+
+.cta-blob--left  { top: -80px;  left: -100px;  }
+.cta-blob--right { bottom: -80px; right: -100px; }
+
+/* ══════════════════════════════════════
+   CONTENT
+══════════════════════════════════════ */
+.cta-content {
+  position: relative;
+  z-index: 1;
+  max-width: 680px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* ── Eyebrow ── */
+.cta-eyebrow {
+  font-family: 'Sora', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+/* ── Headline ── */
+.cta-headline {
+  font-family: 'Sora', sans-serif;
+  font-size: clamp(1.9rem, 5.5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--text-color);
+  margin: 0;
+}
+
+/* ── Subtext ── */
+.cta-subtext {
+  font-size: clamp(0.93rem, 2vw, 1.05rem);
+  color: var(--text-color);
+  opacity: 0.6;
+  line-height: 1.7;
+  max-width: 50ch;
+  margin: 0.25rem 0 0.5rem;
+}
+
+/* ══════════════════════════════════════
+   BUTTONS
+══════════════════════════════════════ */
+.cta-buttons {
+  display: flex;
+  flex-direction: column;           /* mobile: stacked */
+  align-items: center;
+  gap: 0.9rem;
+  margin-top: 0.75rem;
+  width: 100%;
+}
+
 /* ================= MEDIA QUERIES ================= */
 
   @media (min-width: 769px), (orientation: landscape) {
@@ -914,8 +1065,75 @@ body {
   .hiw-step-wrapper:not(:last-child)::after {
     height: 2rem;
   }
+  
+  .wcu-grid {
+    grid-template-columns: repeat(4, 1fr);  /* desktop: 4 columns */
+    gap: 1.5rem;
+  }
 
-    
+  /*  CARD */
+.wcu-card {
+  background: var(--card-bg);
+  border-radius: 1.25rem;
+  padding: 1.75rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.75rem;
+  border: 1.5px solid transparent;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.wcu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(37, 99, 235, 0.12);
+  border-color: color-mix(in srgb, var(--primary-color) 30%, transparent);
+}
+
+/*  ICON */
+.wcu-icon-wrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 1rem;
+  background: color-mix(in srgb, var(--primary-color) 10%, var(--card-bg));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: background 0.22s;
+}
+
+.wcu-card:hover .wcu-icon-wrap {
+  background: color-mix(in srgb, var(--primary-color) 18%, var(--card-bg));
+}
+
+.wcu-icon-wrap img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+/*  TEXT */
+.wcu-heading {
+  font-family: 'Sora', sans-serif;
+  font-size: 0.97rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.wcu-sub {
+  font-size: 0.85rem;
+  color: var(--text-color);
+  opacity: 0.65;
+  line-height: 1.6;
+  margin: 0;
+}
+
   }
   
   @media (max-width: 768px) {
@@ -1017,6 +1235,15 @@ body {
     font-size: 0.6xrem;
     margin-top: 0; 
   }
+   .wcu-icon-wrap {
+    width: 52px;
+    height: 52px;
+  }
+
+  .wcu-icon-wrap img {
+    width: 32px;
+    height: 32px;
+  }
   }
   
   @media (max-width: 400px) {
@@ -1064,4 +1291,92 @@ body {
     width: 100%;
     justify-content: center;
   }
+
+   .wcu-card {
+    padding: 1.25rem 0.9rem;
   }
+
+  .wcu-icon-wrap {
+    width: 52px;
+    height: 52px;
+  }
+
+  .wcu-icon-wrap img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .wcu-heading {
+    font-size: 0.88rem;
+  }
+
+  .wcu-sub {
+    font-size: 0.78rem;
+  }
+
+  .cta-section {
+    padding: 4rem 1.25rem;
+  }
+
+  .cta-btn {
+    font-size: 0.88rem;
+    padding: 0.8rem 1.5rem;
+  }
+  
+  }
+
+
+  @media (min-width: 480px) {
+  .cta-buttons {
+    flex-direction: row;            /* desktop: side by side */
+    justify-content: center;
+    width: auto;
+  }
+}
+
+/* ── Shared button base ── */
+.cta-btn {
+  font-family: 'Sora', sans-serif;
+  font-size: 0.97rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 0.85rem 2rem;
+  border-radius: 0.85rem;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s, color 0.18s, border-color 0.18s;
+  width: 100%;
+}
+
+@media (min-width: 480px) {
+  .cta-btn { width: auto; }
+}
+
+.cta-btn:active { transform: scale(0.97); }
+
+/* ── Primary: solid brand ── */
+.cta-btn--primary {
+  background: var(--primary-color);
+  color: #ffffff;
+  border: 2px solid var(--primary-color);
+  box-shadow: 0 4px 18px rgba(37, 99, 235, 0.28);
+}
+
+.cta-btn--primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.38);
+  opacity: 0.92;
+}
+
+/* ── Secondary: outline ── */
+.cta-btn--secondary {
+  background: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  box-shadow: none;
+}
+
+.cta-btn--secondary:hover {
+  background: color-mix(in srgb, var(--primary-color) 10%, transparent);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.12);
+}
