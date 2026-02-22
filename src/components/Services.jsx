@@ -6,7 +6,7 @@ function Services() {
   const [activeCard, setActiveCard] = useState(null);
 
   return (
-        <section className="services">
+        <section id="services" className="services">
     <h2 className="section-title">Our Services</h2>
     <p className="section-subtitle">Professional 24/7 Emergency Services</p>
 

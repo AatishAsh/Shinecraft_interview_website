@@ -1,7 +1,7 @@
 
 function FinalCTA() {
   return (
-    <section className="cta-section">
+    <section  id="final-cta" className="cta-section">
 
       {/* Decorative blobs */}
       <div className="cta-blob cta-blob--left"  aria-hidden="true" />

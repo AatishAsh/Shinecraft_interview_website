@@ -2,7 +2,7 @@ import worker from "../assets/worker.jpg";
 
 function Hero() {
   return (
-    <section className="hero">
+    <section id="home" className="hero">
       <div className="container hero-wrapper">
         
         {/* Left Side - Text */}
@@ -17,7 +17,13 @@ function Hero() {
 
           <div className="hero-buttons">
             <button className="primary-btn">Request Service</button>
-            <button className="secondary-btn">View AMC Plans</button>
+            <button
+              className="secondary-btn"
+              onClick={() => {
+                document.getElementById("amc").scrollIntoView({ behavior: "smooth" });
+                }}>
+              View AMC Plans
+            </button>
           </div>
         </div>
 

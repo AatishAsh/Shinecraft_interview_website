@@ -7,22 +7,22 @@
   --primary-color: #2563eb;
   --card-bg: #e8eef8;    
   --toggle-bg: #c5d0e6;
-  --navbar-gradient: linear-gradient(90deg, #dbeafe, #f0f4ff);
   --shine-color-light: rgba(185, 185, 185, 0.1);
   --shine-color-mid: rgba(255, 255, 255, 0.2);
-}
+  --navbar-gradient: linear-gradient(-45deg, #93c5fd, #60a5fa, #bae6fd, #a5f3fc);}
 /* Dark Theme */
 [data-theme="dark"] {
   --bg-color: #111827;
   --text-color: #f9fafb;
   --primary-color: #3b82f6;
   --card-bg: #1f2937;
-  --toggle-bg: #47566d;
-  --navbar-gradient: linear-gradient(90deg, #0f172a, #1e293b);
   --shine-color-light: rgba(0, 0, 0, 0.08);
   --shine-color-mid: rgba(0, 0, 0, 0.15);
+   --navbar-gradient: linear-gradient(-45deg, #0f172a, #1e3a5f, #1e293b, #0f2744);
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -95,13 +95,6 @@ body {
   color: white;
 }
 
-.navbar {
-  background: var(--navbar-gradient);
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
 /* ================= EMERGENCY SUPPORT SECTION ================= */
 /* ── Section ── */
@@ -693,7 +686,7 @@ body {
     flex-direction: row-reverse;
   }
 
-/* ================= PRODUCTS STORE ============ */
+/* ====================== PRODUCTS STORE =================== */
 /* SECTION */
 .ps-section {
   width: 100%;
@@ -877,7 +870,7 @@ body {
 .ps-cta-btn:active {
   transform: scale(0.97);
 }
-/* ================= WHY CHOOSE US SECTION ================= */
+/* ==================== WHY CHOOSE US SECTION =================== */
 /* SECTION */
 .wcu-section {
   width: 100%;
@@ -920,7 +913,9 @@ body {
   margin-inline: auto;
   line-height: 1.6;
 }
-
+.wcu-heading{
+  color: var(--primary-color);
+}
 /*
    GRID
    mobile:  2 x 2
@@ -933,6 +928,7 @@ body {
   margin-inline: auto;
 }
 /*========Finally, the CTA section========*/
+
 /* ══════════════════════════════════════
    SECTION
 ══════════════════════════════════════ */
@@ -1214,25 +1210,34 @@ body {
       display: inline-block;
     }
 
-   .amc-grid {
-      grid-template-columns: repeat(2, 1fr);
-      align-items: stretch;
-      gap: 0.75rem;
-    }
+     .amc-grid {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: stretch;      /* makes both cards the same height */
+    gap: 0.75rem;
+  }
 
-    .plan-card {
-      width: 100%;
-    }
+  .plan-card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;    /* stack content vertically */
+    height: 100%;              /* fill the grid cell */
+  }
 
-    .plan-btn {
-      width: auto;
-      font-size: 0.8rem;
-      white-space: nowrap;
-      padding: 0.5rem 1rem;
-    }
+  .plan-card ul {
+    flex: 1;                   /* ul grows to fill space, pushing button down */
+    margin-bottom: 1.25rem;
+  }
+
+  .plan-btn {
+    width: 100%;               /* full width so both buttons look identical */
+    font-size: 0.78rem;
+    white-space: nowrap;
+    padding: 0.6rem 0.75rem;
+    margin-top: auto;          /* sticks button to the bottom of every card */
+  }
 
   .hiw-premium-note {
-    font-size: 0.6xrem;
+    font-size: 0.65rem;
     margin-top: 0; 
   }
    .wcu-icon-wrap {
@@ -1248,7 +1253,7 @@ body {
   
   @media (max-width: 400px) {
     .hiw-step {
-    flex-direction: column-reverse !important; /* stack: image on top, text below */
+    flex-direction: column-reverse !important; 
     align-items: flex-start;
   }
 

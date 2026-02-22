@@ -44,7 +44,7 @@ function HowItWorks({ theme }) {
   const isDark = theme === "dark";
 
   return (
-    <section className="hiw-section">
+    <section id="how-it-works" className="hiw-section">
 
       <div className="hiw-title-wrap">
         <h2 className="hiw-section-title">How It Works</h2>

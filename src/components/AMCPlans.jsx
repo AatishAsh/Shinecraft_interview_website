@@ -1,6 +1,6 @@
 function AMCPlans() {
     return(
-<section className="amc">
+<section id="amc" className="amc">
   <h2 className="section-title">AMC Plans</h2>
   <p className="section-subtitle">
     Affordable Annual Maintenance Contracts for your home & office

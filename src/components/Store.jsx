@@ -32,7 +32,7 @@ const categories = [
 
 function Store() {
   return (
-    <section className="ps-section">
+    <section  id="store" className="ps-section">
 
       <div className="ps-title-wrap">
         <h2 className="ps-section-title">Product Store</h2>
