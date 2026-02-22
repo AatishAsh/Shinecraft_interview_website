@@ -191,8 +191,8 @@ html {
    MOBILE DROPDOWN MENU
 ══════════════════════════════════════ */
 .navbar-mobile-menu {
-  position: absolute;
-  top: 100%;
+  position: fixed;  
+  top: 80px;         
   left: 0;
   right: 0;
   background: var(--card-bg);
