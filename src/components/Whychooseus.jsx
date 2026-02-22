@@ -21,7 +21,7 @@ function WhyChooseUs({ theme }) {
   const isDark = theme === "dark";
 
   return (
-    <section className="wcu-section">
+    <section  id="why-choose-us" className="wcu-section">
 
       <div className="wcu-title-wrap">
         <h2 className="wcu-section-title">Why Choose Us</h2>

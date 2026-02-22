@@ -37,10 +37,19 @@ function Navbar({ toggleTheme, theme }) {
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
-  const handleLinkClick = (href) => {
-    setActiveLink(href);
-    setMenuOpen(false);
-  };
+ const handleLinkClick = (href) => {
+  setActiveLink(href);
+  setMenuOpen(false);
+
+  const section = document.querySelector(href);
+  if (section) {
+    section.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  }
+};
+
 
   return (
     <nav className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>
