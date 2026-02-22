@@ -5,6 +5,12 @@ html {
   scroll-behavior: smooth;
 }
 
+
+.navbar {
+  width: 100%;
+  left: 0;
+  right: 0;
+}
 /* ══════════════════════════════════════
    NAVBAR BASE
 ══════════════════════════════════════ */
